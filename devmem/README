@@ -1,0 +1,56 @@
+Purpose:
+
+A simple library to operate physical address in usersapce,
+which is based on linux "/dev/mem".
+
+Also, some useful tools is provided, including:
+--devmd, display PA's value.
+--devmcpy, copy from src PA to dst PA.
+--devmset, set PA to special value.
+--devmload, load file to PA.
+--devmsave, save PA to file.
+
+Uasge:
+
+--devmem library
+	Include devmem.h, and put devmem.c together with your souece code,
+	call the APIs you need, and build them.
+
+--devmd 
+	./devmd { address } [type] [count]
+	address: Address to act upon
+	width:	Width (8/16/...), default is 32
+	count:	Data count to be read, default is 1
+
+--devmcpy 
+	./devmcpy {src_addr} {dst_addr} {count} [width]
+	src_addr:	source address
+	dst_addr:	destination address
+	count:		copy count, default is 1
+	width:		width, 8/16/32/64..., default is 32
+
+--devmset 
+	./devmset {address} {value} {count} [width]
+	address:	Address to act upon
+	value:		Value to write
+	count:		Set counts
+	width:		width, 8/16/32/64..., default is 32
+
+--devmload 
+	./devmload {addr} {filename}
+	addr:		destination physical address
+	filename:	file name will load from
+
+--devmsave 
+	./devmsave {addr} {len} {filename}
+	addr:	physical address need to save
+	len:	length in byte
+	filename: file save to
+
+Author:
+
+wowo<www.wowotech.net>
+
+Date:
+
+2015-05-15
