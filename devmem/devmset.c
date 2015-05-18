@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	count = strtoul(argv[3], 0, 0);
 
 	if (argc > 4)
-		width = strtoul(argv[width], 0, 0);
+		width = strtoul(argv[4], 0, 0);
 
 	DEBUG("addr 0x%lx, value 0x%lx, count %d, width %d\n",
 		addr, value, count, width);
